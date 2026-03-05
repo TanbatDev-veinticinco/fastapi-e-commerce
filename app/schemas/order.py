@@ -9,20 +9,18 @@ class OrderCreate(BaseModel):
     created_at: datetime
 
 
-class OrderOut(BaseModel):
+class OrderItemOut(BaseModel):
     product_id: int
     quantity: int
     price: float
-    quantity: int
+    subtotal: float
 
-
-class OrderCreate(BaseModel):
-    user_id: int
 
 class OrderOut(BaseModel):
     id: int
     user_id: int
-    items: list[OrderOut]
+    quantity: int
+    items: list[OrderItemOut]
     total_price: float
     status: str
     created_at: datetime    

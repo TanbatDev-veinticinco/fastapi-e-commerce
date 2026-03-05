@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from datetime import datetime
 
 
 class ProductCreate(BaseModel):
@@ -25,4 +26,5 @@ class ProductOut(BaseModel):
     category: str
     stock: int
     vendor_id: int
+    created_at: datetime
        
