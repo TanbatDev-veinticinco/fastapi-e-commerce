@@ -1,4 +1,4 @@
-from app.storage import db
+from storage import db
 from datetime import datetime
 
 
