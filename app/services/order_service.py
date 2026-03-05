@@ -21,6 +21,9 @@ def create_order(user_id: int):
     for item in cart["items"]:
         product = db.products[item["product_id"]]
 
+        if item["quantity"] > product ["stock"]:
+            raise ValueError("Not enough stock")
+
         subtotal = product["price"] * item["quantity"]
         total_price += subtotal
 
@@ -33,7 +36,7 @@ def create_order(user_id: int):
             "subtotal": subtotal
         })
 
-    new_order_id = db.order_id_counter
+    new_order_id = db.orders_counter
 
     new_order = {
         "id": new_order_id,
