@@ -1,4 +1,4 @@
-from app.storage import db
+from storage import db
 
 
 def add_to_cart(user_id: int, product_id: int, quantity: int):
