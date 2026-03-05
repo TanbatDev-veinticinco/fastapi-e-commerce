@@ -5,7 +5,7 @@ class CartCreate(BaseModel):
     product_id: int
     quantity: int
 
-class CartOut(BaseModel):
+class CartItemOut(BaseModel):
     product_id: int
     quantity: int
     price: float
@@ -13,5 +13,5 @@ class CartOut(BaseModel):
 
 class CartOut(BaseModel):
     user_id: int
-    items: list[CartOut]
+    items: list[CartItemOut]
     total_price: float
